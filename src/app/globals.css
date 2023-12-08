@@ -1,0 +1,10 @@
+
+body{
+    margin: 0px;
+    overflow: hidden; /* Hide scrollbars */
+    cursor: wait;
+}
+a{
+    color: inherit;
+    text-decoration: none;
+}
