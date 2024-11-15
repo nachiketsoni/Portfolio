@@ -69,6 +69,7 @@ export default function index() {
                 <div className={`${styles.burger} ${isActive ? styles.burgerActive : ""}`}></div>
             </Rounded>
         </div>
+        
         <AnimatePresence mode="wait">
             {isActive && <Nav />}
         </AnimatePresence>

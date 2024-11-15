@@ -1,0 +1,157 @@
+.container {
+  --font-family: system-ui, sans-serif;
+  --fs-400: clamp(1.13rem, calc(1.06rem + 0.33vw), 1.31rem);
+  --clr-primary-200: rgb(255, 255, 255);
+  --clr-accent-300: #0077b5;
+  --clr-accent-400: rgb(73, 169, 248);
+  --clr-shadow-200: rgb(184 184 184);
+  --clr-shadow-300: rgb(92, 92, 92);
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 1000;
+  display: grid;
+  place-items: center;
+}
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #000000b7;
+}
+
+.formBox {
+  width: 70vw;
+  height: 80vh;
+  border-radius: 10px;
+  z-index: 1200;
+  background-color: #fff;
+  overflow: hidden;
+  padding: 10px;
+  position: relative;
+  display: flex;
+  gap: 10px;
+}
+.close {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  margin: 10px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  color: white;
+  z-index: 3;
+  background-color: rgba(69, 69, 69, 0.235);
+  transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.5s;
+  cursor: pointer;
+  &:hover {
+    background-color: rgba(69, 69, 69, 0.557);
+  }
+}
+
+.image {
+  border-radius: 10px;
+  height: 100%;
+  width: 40%;
+  object-fit: cover;
+}
+
+.right {
+  width: 60%;
+  // background-color: red;
+  padding: 0 10px;
+  border: 1px solid rgba(197, 195, 195, 0.406);
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.321);
+  h1 {
+    font-weight: 400;
+    font-size: 2.5rem;
+  }
+}
+
+.inputwrapper {
+  height: fit-content;
+  position: relative;
+  line-height: 14px;
+
+  display: flex;
+  gap: 1rem;
+  min-width: 200px;
+  background-color: #ffffff;
+  .inputtext {
+    border: 1px solid rgba(82, 82, 82, 0.45);
+    border-radius: 10px;
+    padding: 0 1rem;
+    width: 100%;
+    height: 3rem;
+    margin: 1rem 0;
+
+    outline: none;
+    background: none;
+    transition: all 160ms ease-in;
+  }
+}
+.rate {
+  // height: fit-content;
+  // position: relative;
+  line-height: 18px;
+  margin: 0 10px;
+  min-width: 200px;
+  // background-color: #ed0000;
+  color: var(--clr-accent-300);
+
+  span {
+    color: gold;
+    cursor: pointer;
+    font-size: 3rem;
+    font-weight: 100;
+  }
+  button {
+    padding: 0.7rem 1.2rem;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    background-color: var(--clr-accent-400);
+    color: white;
+    font-size: 1rem;
+    margin-top: 3rem;
+  }
+}
+
+#textarea {
+  height: 10rem;
+  padding: 1rem;
+}
+.inputtext:hover {
+  border-color: var(--clr-accent-300);
+}
+
+.inputtext:focus {
+  border-color: var(--clr-accent-400);
+}
+
+.inputtext:focus ~ .inputlabel,
+.inputtext:not(:placeholder-shown) ~ .inputlabel,
+.inputtext:not(:placeholder-shown):focus ~ .inputlabel {
+  top: 1rem;
+  font-size: 0.8rem;
+  left: 1.2rem;
+  color: var(--clr-accent-400);
+}
+.inputtext:not(:focus):not(:placeholder-shown) ~ .inputlabel {
+  color: var(--clr-shadow-200);
+  background-color: var(--clr-primary-200);
+}
+.inputlabel {
+  position: absolute;
+  left: 1.2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 0 0.5rem;
+  color: rgba(0, 0, 0, 0.594);
+  cursor: text;
+  transition: top 200ms ease-in, left 200ms ease-in, font-size 200ms ease-in,
+    color 200ms ease-in;
+  background-color: #fff;
+}
